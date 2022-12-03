@@ -66,6 +66,8 @@ export class Setting {
   /**  */
   playerR: IPlayer;
 
+  drawYellow: boolean;
+
   constructor() {
     this.ball = {
       x: this.ballXDefault,
@@ -94,5 +96,6 @@ export class Setting {
       color: '#38887A',
       keys: [[38, 'up'], [40, 'down']],
     }
+    this.drawYellow = false
   }
 }

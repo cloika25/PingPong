@@ -21,8 +21,8 @@ export class Player {
   yellowZone: boolean;
   ballReversStatus: boolean;
 
-  up: boolean;
-  down: boolean;
+  up?: boolean;
+  down?: boolean;
 
   constructor(game: Game, player: IPlayer) {
     this.game = game;
@@ -48,7 +48,7 @@ export class Player {
 
   }
 
-  keyController(e, state) {
+  keyController(e: KeyboardEvent, state: boolean) {
     if (this.keyMap.has(e.keyCode)) {
       this[this.keyMap.get(e.keyCode)!] = state
     }

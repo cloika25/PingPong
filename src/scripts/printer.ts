@@ -194,20 +194,24 @@ export class Printer {
   }
 
   drawShadowPlayer(xS: number, yS: number, yF: number) {
-    /** Отрисовка для дебага */
-    const color = this.set.supportColorYellow
-    const plWidth = (this.set.playerRadius * 2)
+    if (this.set.drawYellow) {
+      /** Отрисовка для дебага */
+      const color = this.set.supportColorYellow;
+      const plWidth = (this.set.playerRadius * 2);
 
-    this.supCan.drawLine(xS, yS, xS, yF, plWidth, color)
+      this.supCan.drawLine(xS, yS, xS, yF, plWidth, color);
+    }
   }
 
   drawYellowZone(x: number, yS: number, yF: number) {
-    /** Отрисовка зоны отскока */
-    const color = this.set.supportColorYellow
-    const center = (this.set.boxWidth / 2)
+    if (this.set.drawYellow) {
+      /** Отрисовка зоны отскока */
+      const color = this.set.supportColorYellow
+      const center = (this.set.boxWidth / 2)
 
-    this.supCan.drawLine(x, yS, center, yS, 1, color)
-    this.supCan.drawLine(x, yF, center, yF, 1, color)
+      this.supCan.drawLine(x, yS, center, yS, 1, color)
+      this.supCan.drawLine(x, yF, center, yF, 1, color)
+    }
   }
 
   drawAngleZone() {
