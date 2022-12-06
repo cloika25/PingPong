@@ -10,9 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    steps:
-      - name: npm install
-        run: npm i
+    strategy:
+      matrix:
+        node-version: [12.x]
 
-      - name: run
-        run: npm run dev
+    steps:
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run dev
