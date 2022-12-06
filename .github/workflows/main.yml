@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      
-      - name: tsc compile
-        run: tsc
+      - name: npm install
+        run: npm i
+
+      - name: run
+        run: npm run dev
