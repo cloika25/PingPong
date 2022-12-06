@@ -50,7 +50,7 @@ export class Player {
 
   keyController(e: KeyboardEvent, state: boolean) {
     if (this.keyMap.has(e.keyCode)) {
-      this[this.keyMap.get(e.keyCode)!] = state
+      this[this.keyMap.get(e.keyCode)! as 'up' | 'down'] = state
     }
   }
 
