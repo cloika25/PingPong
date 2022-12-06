@@ -20,12 +20,20 @@ const openSettingDialog = () => {
     settingMenuContainer.innerHTML = settingMenu;
     gameContainer?.appendChild(settingMenuContainer);
     const continueBtn = document.getElementById('continue')
-    if (continueBtn)
+    const changeBackgroundColor = document.getElementById('changeBackgroundColor')
+    if (continueBtn) {
       continueBtn.onclick = () => {
         closeSettingMenu();
         actualGame.pauseToggle()
       }
+    }
+    if (changeBackgroundColor) {
+      changeBackgroundColor.onclick = () => {
+        console.log('Open color picker')
+      }
+    }
   }
+
 }
 
 window.onload = () => {
